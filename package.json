@@ -1,0 +1,20 @@
+{
+  "name": "localization-matcher",
+  "version": "1.0.0",
+  "description": "CLI to compare localization JSONS and find structural differences",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "localization-matcher": "./cli.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.1.1",
+    "inquirer": "^7.0.6"
+  }
+}
