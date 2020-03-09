@@ -49,3 +49,30 @@ function init() {
     }
   })
 }
+
+
+function recursiveIteration(object, parent, target, fl) {
+  for (var property in object) {
+      if (object.hasOwnProperty(property)) {
+          if (typeof object[property] == "object"){
+              var parents = (parent ? parent : '') + (property? property : '')
+              recursiveIteration(object[property], parents + '.', target, fl);
+          }else{
+              if(!getO(target, parent+property)) { 
+                console.log("\x1b[41m", fl + ' \x1b[0m -> ' + parent + '\x1b[1m' + property, '\x1b[0m')
+              }
+          }
+      }
+  }
+}
+
+function getO(object, key) {
+  var keys = key.split('.');
+  for (var i = 0; i < keys.length; i++) {
+      if (!object.hasOwnProperty(keys[i])) {
+          return null;
+      }
+      object = object[keys[i]];
+  }
+  return object;
+}
